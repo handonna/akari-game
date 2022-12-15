@@ -1,0 +1,40 @@
+package com.comp301.a09akari.controller;
+
+import com.comp301.a09akari.model.Model;
+import com.comp301.a09akari.model.Puzzle;
+
+public interface ClassicMvcController {
+  /** Handles the click action to go to the next puzzle */
+  void clickNextPuzzle();
+
+  /** Handles the click action to go to the previous puzzle */
+  void clickPrevPuzzle();
+
+  /** Handles the click action to go to a random puzzle */
+  void clickRandPuzzle();
+
+  /** Handles the click action to reset the currently active puzzle */
+  void clickResetPuzzle();
+
+  /** Handles the click event on the cell at row r, column c */
+  void clickCell(int r, int c);
+
+  // own methods from here on
+  boolean isSolved();
+
+  void setModel(Model model);
+
+  int getActivePuzzleIndex();
+
+  int getLibrarySize();
+
+  boolean getIsLampIllegal(int r, int c);
+
+  boolean isLamp(int r, int c);
+
+  boolean isLit(int r, int c);
+
+  boolean isClueSatisfied(int r, int c);
+
+  Puzzle getActivePuzzle();
+}
